@@ -1,0 +1,23 @@
+<!-- src/main/resources/templates/admin/dashboard.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h2>Admin Dashboard</h2>
+<p>Welcome, <span style="color:red;" th:text="${#authentication.name}">Admin</span>!</p>
+<a th:href="@{/logout}">Logout</a>
+<hr>
+<div>
+    <ul>
+        <li><a th:href="@{/admin/profile}">View Profile</a></li>
+
+        <!-- Add more admin functionalities as needed -->
+        <li><a th:href="@{/admin/users}">Manage Users</a></li>
+    </ul>
+</div>
+</body>
+</html>
