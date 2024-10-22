@@ -1,0 +1,32 @@
+<!-- src/main/resources/templates/login.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h2>Login</h2>
+<form th:action="@{/login}" method="post">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required />
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required />
+    </div>
+    <button type="submit">Login</button>
+</form>
+<div th:if="${param.error}">
+    <p class="error">Invalid username or password.</p>
+</div>
+<div th:if="${param.logout}">
+    <p class="success">You have been logged out successfully.</p>
+</div>
+<p>Don't have an account? <a th:href="@{/register}">Register here</a>.</p>
+<!-- Admin Credentials -->
+<p style="color:red;">Admin? Username: admin / password: adminpassword</p>
+</body>
+</html>

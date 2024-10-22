@@ -1,0 +1,28 @@
+<!-- src/main/resources/templates/admin/profile.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Admin Profile</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h2>Admin Profile</h2>
+
+<div>
+    <p><strong>Username:</strong> <span th:text="${user.username}">Username</span></p>
+    <p><strong>Email:</strong> <span th:text="${user.email}">Email</span></p>
+    <p><strong>First Name:</strong> <span th:text="${user.firstName}">First Name</span></p>
+    <p><strong>Last Name:</strong> <span th:text="${user.lastName}">Last Name</span></p>
+    <p><strong>Role:</strong> <span th:text="${user.role.name}">Role</span></p>
+    <p><strong>Account Enabled:</strong> <span th:text="${user.enabled}">Enabled</span></p>
+</div>
+
+<hr>
+
+<div>
+    <a th:href="@{/admin/dashboard}">Back to Dashboard</a> |
+    <a th:href="@{/logout}">Logout</a>
+</div>
+</body>
+</html>
